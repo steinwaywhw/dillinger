@@ -11,7 +11,27 @@ html {
   color: $c-text;
   font-family: $base-font-family;
   height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
+}
+
+body {
+  @include fontsize(zeta, all);
+  font-family: unquote(map-get($bodytype, font-family));
+  font-weight: map-get($bodytype, regular);
+  line-height: 2rem;
+  height: 100%;
+  // overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  // &::-webkit-scrollbar-thumb:vertical {
+  //   height: 0px;
+  //   background-color: rgba(125,125,125,0.5);
+  //   -webkit-border-radius: 0px;
+  // }
 }
 
 ::-webkit-scrollbar {
@@ -28,14 +48,6 @@ html {
   height: 50px;
   background-color: rgba(125,125,125,0.5);
   -webkit-border-radius: 6px;
-}
-
-body {
-  @include fontsize(zeta, all);
-  font-family: unquote(map-get($bodytype, font-family));
-  font-weight: map-get($bodytype, regular);
-  line-height: 2rem;
-  height: 100%;
 }
 
 // -------------------------------------
@@ -64,33 +76,14 @@ p {
 }
 
 pre {
-  // @include fontsize(zeta, all);
   @include sp(zeta, $bodytype, 2, 2, all);
   line-height: 2rem;
-  // background: linear-gradient(
-  //   to bottom,
-  //   rgba(#fff, 1) 0,
-  //   rgba(#fff, 1) .75rem,
-  //   rgba(#F5F7FA, 1) .75rem,
-  //   rgba(#F5F7FA, 1) 2.75rem,
-  //   rgba(#fff, 1) 2.75rem,
-  //   rgba(#fff, 1) 4rem
-  // );
   background-size: 100% 4rem;
   border-color: #D3DAEA;
 }
 
 blockquote {
   margin: 0;
-
-  p {
-    // @include sp(zeta, $bodytype, 2, 1, all);
-    // font-style: map-get($bodytype, italic);
-    // padding-left: 1rem;
-    // padding-right: 1rem;
-    // padding-bottom: 1rem;
-    // border-left: 3px solid $c-links;
-  }
 }
 
 th,
